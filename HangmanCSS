@@ -1,0 +1,78 @@
+.tophead {
+	font-size: xx-large;
+	font-weight: bolder;
+	padding: 10px 10px 10px 10px;
+	float: left;
+}
+
+#start {
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	padding: 5px 5px 5px 5px;
+	float: left;
+}
+
+.guess {
+	width: 50px;
+	height: 50px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: black;
+	padding: 5px 5px 5px 5px;
+	float: left;
+	color: white;
+	border-left-width: 10px;
+	border-left-color: white;
+	border-left-style: solid;
+	border-right-width: 10px;
+	border-right-color: white;
+	border-right-style: solid;
+	float: top; 
+}
+
+	.guessed {
+	width: 50px;
+	height: 50px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: black;
+	padding: 5px 5px 5px 5px;
+	float: left;
+	color: black;
+	border-left-width: 10px;
+	border-left-color: white;
+	border-left-style: solid;
+	border-right-width: 10px;
+	border-right-color: white;
+	border-right-style: solid;
+	float: top;
+}
+
+ .letter {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    padding: 2px;
+    float: left;
+    margin: 2px;
+  }
+  .letter-button-color {
+    color: darkcyan;
+  }
+  .fridge-color {
+    color: black;
+  }
+  #display {
+    margin-top: 78px;
+    margin-left: 60px;
+  }
+  #buttons {
+    padding-top: 60px;
+  }
+  #clear {
+    margin-left: 20px;
+    font-size: 25px;
+    color: black;
+    border-style: solid;
+    width: 100px;

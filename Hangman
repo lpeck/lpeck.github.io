@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B1G Hangman</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href=".Style.css">
+  <link rel="stylesheet" type="text/css" href=".reset.css">
+
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6"><p class="tophead"> Big 10 Hangman</p>
+	<button id="start">Click to play and guess the name of a B1G team</button></div>
+	<div class="col-sm=6">
+		<img src=".BigTen.png" alt="Big 10 logo" width=200>
+	</div>
+</div>
+<div class="hangman"></div>
+<div class="row"> <p> Letters Guessed:</p>
+</div>
+<div class="row">
+  <div id="display"></div>
+  <div id="buttons"></div>
+ </div>
+</div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    		var teams = ["Spartans", "Wolverines", "Hoosiers", "Hawkeyes", "Gophers", "Wildcats", "Illini", "Cornhuskers", "Nittany Lions", "Terrapins", "Knights", "Boilermakers", "Buckeyes"];
+	var TeamToGuess = ""
+  var GuessesLeft = 15
+   $(".start").on("click", function() {
+	var GuessesLeft = 15
+        // Inside the on-click event...
+        // 13. Use the jQuery "empty()" method to clear the contents of the "#display" div.
+     $("#display").empty();
+})
+	//randomly select a word from the array to use for guessing
+	var TeamToGuess = teams[Math.floor(Math.random()*teams.length)];
+	console.log(TeamToGuess);
+	console.log(GuessesLeft);
+	//parse the selected team into an array for each letter
+	var LetterGuess = TeamToGuess.split('');
+	var GuessLength = LetterGuess.length
+	console.log(GuessLength)
+  var temp;
+        //create div boxes for each letter that needs to be guessed
+  for (i = 0; i < GuessLength; i++) {
+      temp = document.createElement('div');
+      temp.className = 'guess';
+    temp.innerHTML = LetterGuess[i];
+   document.getElementsByTagName('body')[0].appendChild(temp);
+  }
+  console.log(LetterGuess);
+ 
+      var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
+      for (var i = 0; i < letters.length; i++) {
+        var letterBtn = $("<button>");
+        letterBtn.addClass("letter-button letter letter-button-color");
+        letterBtn.attr("data-letter", letters[i]);
+        letterBtn.text(letters[i]);
+        $("#buttons").append(letterBtn);
+      }
+        //Nest the action of adding letters to the board and counting down the guesses until guesses goes to zero
+      var DecGuessesLeft = 15
+      console.log(DecGuessesLeft)
+      console.log(GuessesLeft)
+      $(".letter-button").on("click", function() {
+      	var DecGuessesLeft = GuessesLeft--;
+      	alert(DecGuessesLeft + " Guesses left")
+        var fridgeMagnet = $("<div>");
+        fridgeMagnet.addClass("letter fridge-color");
+        fridgeMagnet.text($(this).attr("data-letter"));
+        $("#display").append(fridgeMagnet);
+        // Add action to change the class of the white text divs to display the letter text in black if the corresponding letter button is clicked
+	//should be some sort on "on click" find div with (this) and change class to .guessed from CSS file
+	//yes I am aware that white text is a terrible method for design, but it works!
+        temp.text($(this).attr("data-letter"));
+        //build action to figure out when game is won i.e. every array element has it's classed change to visisble 
+	//build action to send alert when game is lost and DecGuessesLeft reaches 0 and not all divs are uncovered
+        //build action on the "start" div to restart the game - set GuessesLeft back to 15 and randomly select new word from teams array
+        });
+      });
+	</script>
+</body>
+</html>

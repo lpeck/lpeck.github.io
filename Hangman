@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href=".Style.css">
-  <link rel="stylesheet" type="text/css" href=".reset.css">
+  <link rel="stylesheet" type="text/css" href="./HangmanCSS.css">
+  <link rel="stylesheet" type="text/css" href="./reset.css">
 
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<div class="col-sm-6"><p class="tophead"> Big 10 Hangman</p>
 	<button id="start">Click to play and guess the name of a B1G team</button></div>
 	<div class="col-sm=6">
-		<img src=".BigTen.png" alt="Big 10 logo" width=200>
+		<img src="./BigTen.png" alt="Big 10 logo" width=200>
 	</div>
 </div>
 <div class="hangman"></div>

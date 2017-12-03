@@ -78,6 +78,7 @@
 			if (score === numtoguess) {
 				alert("You Win!");
 				numtoguess = 19 + Math.floor(Math.random() * 120);
+				numwins++;
 				$("#wins").html(numwins);
 				score = 0;
 				$("#score").html(score);

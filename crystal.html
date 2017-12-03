@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Crystal Puzzle</title>
+     <link rel="stylesheet" href="./assets/crystalstyle.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body background="./assets./images./tree_bark.png" style="width: 870px" >
+
+<div id="main">
+	<h1>Crystal Collector!</h1>
+</div>
+
+
+<div id="instructions">
+	<h3> Game Instructions</h3>
+		<p>A number will appear in the green box below.<br><br>
+		There are 4 widgets below, Spartan Helmet, football, Block S, and basketball. Each are assigned a number between 1 and 12.<br><br>
+		Click on a widget to add its value to the running total in the white box.<br><br>
+		To win the game reach get the running total in the white box to equal the given number exactly. If your score goes over you lose.</p>
+
+</div>
+
+
+
+	<div id="labels">Number to reach:</div>
+
+	<div id="rando"></div>
+
+	<div id="labels">Your Score:</div>
+
+	<div id="score"></div>
+
+	<div id="labels">Wins:</div>
+
+	<div id="wins"></div>
+
+	<div id="labels">Losses:</div>
+
+	<div id="losses"></div>
+
+	<div id="widget1"><img src="./assets/images/helmet.png" alt="Spartan Helmet" style="width:175px;height:175px;"></div>
+
+	<div id="widget2"><img src="./assets/images/football.png" alt="football" style="width:175px;height:175px;"></div>
+
+	<div id="widget3"><img src="./assets/images/BlockS.png" alt="Spartan Block S" style="width:175px;height:175px;"></div>
+
+	<div id="widget4"><img src="./assets/images/basketball.png" alt="Bsketball" style="width:175px;height:175px;"></div>
+
+ 	 <script type="text/javascript">
+
+	
+		$(document).ready(function() {
+
+		var widgetmin = 1;
+		var widgetmax = 12;
+		var guessmin = 19;
+		var guessmax = 120;
+		var widget1value = 1 + Math.floor(Math.random() * 12);
+		var widget2value = 1 + Math.floor(Math.random() * 12);
+		var widget3value = 1 + Math.floor(Math.random() * 12);
+		var widget4value = 1 + Math.floor(Math.random() * 12);
+		var numtoguess = 19 + Math.floor(Math.random() * 120);
+		$("#rando").html(numtoguess);
+		var score = 0;
+		$("#score").html(score);
+		var numwins = 0;
+		$("#wins").html(numwins);
+		var numlosses = 0;
+		$("#losses").html(numlosses);
+		console.log("number to guess:"+numtoguess);
+		console.log("current score:"+score);
+		$("rando").text(numtoguess);
+
+		$("#widget1").on("click", function() {
+			if (score === numtoguess) {
+				alert("You Win!");
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				$("#wins").html(numwins);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of wins:"+numwins);
+				$("#rando").html(numtoguess);
+			}
+
+			else if (score > numtoguess){
+				alert("Sorry, you lose!");
+				numlosses++;
+				$("#losses").html(numlosses);
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of losses:"+numlosses);
+				$("#rando").html(numtoguess);
+			}
+				else {score = score + widget1value;
+      			console.log(score)
+    			$("#score").html(score);
+    	  	}	
+    	});
+
+		$("#widget2").on("click", function() {
+			if (score === numtoguess) {
+				alert("You Win!");
+				numwins++;
+				$("#wins").html(numwins);
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of wins:"+numwins);
+				$("#rando").html(numtoguess);
+			}
+
+			else if (score > numtoguess){
+				alert("Sorry, you lose!");
+				numlosses++;
+				$("#losses").html(numlosses);
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of losses:"+numlosses);
+				$("#rando").html(numtoguess);
+			}
+				else {score = score + widget2value;
+				console.log("current score:"+score);
+    	  		$("#rando").html(numtoguess);
+    	  		$("#score").html(score);
+    	  	}	
+    	 });
+
+		$("#widget3").on("click", function() {
+			if (score === numtoguess) {
+				alert("You Win!");
+				numwins++;
+				$("#wins").html(numwins);
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of wins:"+numwins);
+				$("#rando").html(numtoguess);
+			}
+
+			else if (score > numtoguess){
+				alert("Sorry, you lose!");
+				numlosses++;
+				$("#losses").html(numlosses);
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of losses:"+numlosses);
+				$("#rando").html(numtoguess);
+			}
+				else {score = score + widget3value;
+      			console.log("current score:"+score);    	  	
+				$("#rando").html(numtoguess);
+				$("#score").html(score);
+      		}	
+    	});
+
+		$("#widget4").on("click", function() {
+			if (score === numtoguess) {
+				alert("You Win!");
+				numwins++;
+				$("#wins").html(numwins);
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of wins:"+numwins);
+				$("#rando").html(numtoguess);
+			}
+
+			else if (score > numtoguess){
+				alert("Sorry, you lose!");
+				numlosses++;
+				$("#losses").html(numlosses);
+				console.log(numlosses);
+				numtoguess = 19 + Math.floor(Math.random() * 120);
+				score = 0;
+				$("#score").html(score);
+				widget1value = 1 + Math.floor(Math.random() * 12);
+				widget2value = 1 + Math.floor(Math.random() * 12);
+				widget3value = 1 + Math.floor(Math.random() * 12);
+				widget4value = 1 + Math.floor(Math.random() * 12);
+				console.log("number to guess:"+numtoguess);
+				console.log("current score:"+score);
+				console.log("number of losses:"+numlosses);
+				$("#rando").html(numtoguess);
+			}
+				else {score = score + widget4value;
+				console.log("current score:"+score);
+    	  		$("#rando").html(numtoguess);
+    	  		$("#score").html(score);
+    	  	}	
+    	});
+
+   });
+
+
+
+</script>
+
+
+
+</body>
+</html>

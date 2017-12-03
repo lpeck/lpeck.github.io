@@ -1,0 +1,169 @@
+
+
+#main {
+	width: 856px;
+	border: 10px 10px 10px 10px;
+	border-width: 3px;
+	border-color: grey;
+	border-style: solid;
+	color: #18453B;
+	font-size: xx-large;
+	text-align: center;
+	clear: both;
+	background: white;
+	}
+
+#instructions{
+	width: 856px;
+	border: 10px 10px 10px 10px;
+	border-width: 3px;
+	border-color: grey;
+	border-style: solid;
+	color: #18453B;
+	font-size: large;
+	text-align: center;
+	clear: both;
+	background: white;
+	}
+
+#rando {
+	width: 103px;
+	height: 75px;
+	text-align: center;
+	border: 5px 5px 5px 5px;
+	background: #18453B;
+	border-color: grey;
+	border-style: solid;
+	float: left;
+	color: white;
+	font-size: large;
+	clear: right;
+
+	}
+
+#labels {
+	width: 103px;
+	height: 75px;
+	text-align: center;
+	border: 5px 5px 5px 5px;
+	background: #18453B;
+	border-color: grey;
+	border-style: solid;
+	float: left;
+	color: white;
+	font-size: large;
+
+	}
+
+#score {
+	width: 103px;
+	height: 75px;
+	text-align: center;
+	border: 5px 5px 5px 5px;
+	background: #18453B;
+	border-color: grey;
+	border-style: solid;
+	float: left;
+	color: white;
+	font-size: large;
+	clear: right;
+}
+
+#wins {
+	width: 103px;
+	height: 75px;
+	text-align: center;
+	border: 5px 5px 5px 5px;
+	background: #18453B;
+	border-color: grey;
+	border-style: solid;
+	float: left;
+	color: white;
+	font-size: large;
+	clear: right;
+}
+
+#losses {
+	width: 103px;
+	height: 75px;
+	text-align: center;
+	border: 5px 5px 5px 5px;
+	background: #18453B;
+	border-color: grey;
+	border-style: solid;
+	float: left;
+	color: white;
+	font-size: large;
+	clear: right;
+}
+
+#metrics {
+	clear: both;
+	width: 860px;
+	height: 85px;
+}
+
+#widget {
+clear: both;
+width: 856px;
+}
+
+#widget1 {
+	width: 211px;
+	height: 180px;
+	text-align: center;
+	border: 6px 6px 6px 6px;
+	background: white;
+	border-color: grey;
+	border-style: solid;
+	color: white;
+	font-size: large;
+	float: left;
+
+
+
+}
+
+#widget2 {
+	width: 211px;
+	height: 180px;
+	text-align: center;
+	border: 6px 6px 6px 6px;
+	background: white;
+	border-color: grey;
+	border-style: solid;
+	color: white;
+	font-size: large;
+	float: left;
+
+}
+
+#widget3 {
+	width: 211px;
+	height: 180px;
+	text-align: center;
+	border: 6px 6px 6px 6px;
+	background: white;
+	border-color: grey;
+	border-style: solid;
+	color: white;
+	font-size: large;
+	float: left;
+
+
+}
+
+#widget4 {
+	width: 211px;
+	height: 180px;
+	text-align: center;
+	border: 6px 6px 6px 6px;
+	background: white;
+	border-color: grey;
+	border-style: solid;
+	color: white;
+	font-size: large;
+	float: left;
+
+
+}

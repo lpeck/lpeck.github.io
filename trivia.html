@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>MSU Trivia</title>
+     <link rel="stylesheet" href="./assets/triviastyle.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body background="./assets./images./tree_bark.png" style="width: 870px" >
+
+<div id="main">
+	<h1>MSU Trivia</h1>
+</div>
+
+
+<div id="instructions">
+	<h1> Game Instructions</h1>
+		<p>Answer 8 Michigan State Football trivia questions to win.<br><br>
+			You must finish in under four minutes.<br><br>
+			<h4>Good Luck!</h4></p>
+<div id="time-left"><h5>Two minutes remaining!</h5></div>
+
+</div>
+<div id="question">What year did MSU Join the Big 10 coference?
+<div id="question0"></div></div>
+<form id="radio0">
+  <input type="radio" name="q0" value="1900">1900<br>
+  <input type="radio" name="q0" value="1925">1925<br>
+  <input type="radio" name="q0" value="1950">1950<br>
+   <input type="radio" name="q0" value="1965">1965
+</form>
+
+<div id="question">Which of the following NFL Quarterbacks played for MSU from 2003-2006?
+<div id="question1"></div></div>
+<form id="radio1">
+  <input type="radio" name="q1" value="Drew Stanton">Drew Stanton<br>
+  <input type="radio" name="q1" value="Brock Osweiler">Brock Osweiler<br>
+  <input type="radio" name="q1" value="Russell Wilson">Russell Wilson<br>
+   <input type="radio" name="q1" value="Jay Cutler">Jay Cutler
+</form>
+
+<div id="question">In terms of winning percentage, which of these was the most successful Spartan Head Coach?
+<div id="question2"></div></div>
+<form id="radio2">
+  <input type="radio" name="q2" value="Nick Saban">Nick Saban<br>
+  <input type="radio" name="q2" value="Mark Dantonio">Mark Dantonio<br>
+  <input type="radio" name="q2" value="John L. Smith">John L. Smith<br>
+   <input type="radio" name="q2" value="Clarence 'Biggy' Munn">Clarence 'Biggy' Munn
+</form>
+
+<div id="question">Who did Michigan State play in its famous 'Game of the Century', that ended in a 10-10 tie?
+<div id="question3"></div></div>
+<form id="radio3">
+  <input type="radio" name="q3" value="U of M">U of M<br>
+  <input type="radio" name="q3" value="Notre Dame">Notre Dame<br>
+  <input type="radio" name="q3" value="Ohio State">Ohio State<br>
+   <input type="radio" name="q3" value="Penn State">Penn State
+</form>
+
+<div id="question">How many Heisman Trophy winners did MSU produce in their first 100 years?
+<div id="question4"></div></div>
+<form id="radio4">
+  <input type="radio" name="q4" value="0">0<br>
+  <input type="radio" name="q4" value="1">1<br>
+  <input type="radio" name="q4" value="3">3<br>
+   <input type="radio" name="q4" value="5">5
+</form>
+
+<div id="question">What is the name of the trophy that is given annually to the winner of the Michigan State-Michigan game?
+<div id="question5"></div></div>
+<form id="radio5">
+  <input type="radio" name="q5" value="The Little Brown Jug">The Little Brown Jug<br>
+  <input type="radio" name="q5" value="The Megaphone">The Megaphone<br>
+  <input type="radio" name="q5" value="Paul Bunyan Trophy">Paul Bunyan Trophy<br>
+   <input type="radio" name="q5" value="Victory Bell">Victory Bell
+</form>
+
+<div id="question">Who did MSU beat in the 2014 Rose Bowl?
+<div id="question6"></div></div>
+<form id="radio6">
+  <input type="radio" name="q6" value="USC">USC<br>
+  <input type="radio" name="q6" value="Stanford">Stanford<br>
+  <input type="radio" name="q6" value="University of Washington">University of Washington<br>
+   <input type="radio" name="q6" value="UCLA">UCLA
+</form>
+
+<div id="question">What is the seating capacity of Spartan Stadium?
+<div id="question7"></div></div>
+<form id="radio7">
+  <input type="radio" name="q7" value="50,000">50,000<br>
+  <input type="radio" name="q7" value="64,000">64,000<br>
+  <input type="radio" name="q7" value="78,000">78,000<br>
+   <input type="radio" name="q7" value="82,000">82,000
+</form>
+
+
+
+
+ 	 <script type="text/javascript">
+
+	
+		$(document).ready(function() {
+
+		setTimeout(HalfMinute, 1000 * 30);
+		setTimeout(OneMinute, 1000 * 60);
+		setTimeout(TimeUp, 1000 * 120);
+
+
+function HalfMinute() {
+
+  $("#time-left").text("Time is running out!");
+
+}
+
+function OneMinute() {
+
+  $("#time-left").text("Less than one minute left!");
+
+}
+
+function TimeUp() {
+
+  // in the element with an id of time-left add an h2 saying Time's Up!
+  // console log done
+
+  $("#time-left").text("Time's Up!");
+			var correctanswers = ["1950","Drew Stanton","Clarence 'Biggy' Munn","Notre Dame","0","Paul Bunyan Trophy","Stanford","78,000"];
+
+			var chosenanswers = [];
+			var varq0 = "";
+			var varq1 = "";
+			var varq2 = "";
+			var varq3 = "";
+			var varq4 = "";
+			var varq5 = "";
+			var varq6 = "";
+			var varq7 = "";
+			var score = 0;
+
+					varq0 = ($('input[name=q0]:checked', '#radio0').val());
+					console.log(varq0);
+					chosenanswers.push(varq0);
+
+
+					varq1 = ($('input[name=q1]:checked', '#radio1').val());
+					console.log(varq1);
+					chosenanswers.push(varq1);
+
+
+					varq2 = ($('input[name=q2]:checked', '#radio2').val());
+					console.log(varq2);
+					chosenanswers.push(varq2);
+
+
+
+					varq3 = ($('input[name=q3]:checked', '#radio3').val());
+					console.log(varq3);
+					chosenanswers.push(varq3);
+
+
+
+					varq4 = ($('input[name=q4]:checked', '#radio4').val());
+					console.log(varq4);
+					chosenanswers.push(varq4);
+
+
+
+					varq5 = ($('input[name=q5]:checked', '#radio5').val());
+					console.log(varq5);
+					chosenanswers.push(varq5);
+
+
+
+					varq6 = ($('input[name=q6]:checked', '#radio6').val());
+					console.log(varq6);
+					chosenanswers.push(varq6);
+
+
+
+					varq7 = ($('input[name=q7]:checked', '#radio7').val());
+					console.log(varq7);
+					chosenanswers.push(varq7);
+
+             console.log(chosenanswers);
+
+        if (chosenanswers[0] === correctanswers[0]) {
+        	$("#question0").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 0")
+        }
+
+        else if (chosenanswers[0] != correctanswers[0] ) {
+        	$("#question0").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[0]+"</h3");
+        	console.log("incorrect answer 0")
+
+        }
+//<p style="color:blue;font-size:46px;">
+         if (chosenanswers[1] === correctanswers[1]) {
+        	$("#question1").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 1")
+        }
+
+        else if (chosenanswers[1] != correctanswers[1] ) {
+        	$("#question1").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[1]+"</h3>");
+        	console.log("incorrect answer 1")
+
+        }
+
+         if (chosenanswers[2] === correctanswers[2]) {
+        	$("#question2").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 2")
+        }
+
+        else if (chosenanswers[2] != correctanswers[2] ) {
+        	$("#question2").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[2]+"</h3>");
+        	console.log("incorrect answer 2")
+
+        }
+
+          if (chosenanswers[3] === correctanswers[3]) {
+        	$("#question3").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 3")
+        }
+
+        else if (chosenanswers[3] != correctanswers[3] ) {
+        	$("#question3").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[3]+"</h3>");
+        	console.log("incorrect answer 3")
+
+        }
+
+         if (chosenanswers[4] === correctanswers[4]) {
+        	$("#question4").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 4")
+        }
+
+        else if (chosenanswers[4] != correctanswers[4] ) {
+        	$("#question4").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[4]+"</h3>");
+        	console.log("incorrect answer 4")
+
+        }
+
+         if (chosenanswers[5] === correctanswers[5]) {
+        	$("#question5").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 5")
+        }
+
+        else if (chosenanswers[5] != correctanswers[5] ) {
+        	$("#question5").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[5]+"</h3>");
+        	console.log("incorrect answer 5")
+
+        }
+
+
+         if (chosenanswers[6] === correctanswers[6]) {
+        	$("#question6").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 6")
+        }
+
+        else if (chosenanswers[6] != correctanswers[6] ) {
+        	$("#question6").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[6]+"</h3>");
+        	console.log("incorrect answer 6")
+
+        }
+
+         if (chosenanswers[7] === correctanswers[7]) {
+        	$("#question7").append("<h2>Correct!</h2>");
+        	score++;
+        	console.log("correct answer 7")
+        }
+
+        else if (chosenanswers[7] != correctanswers[7] ) {
+        	$("#question7").append("<h3>Incorrect! Correct Answer Was: "+correctanswers[7]+"</h3>");
+        	console.log("incorrect answer 7")
+
+        }
+
+       if (score > 4){
+       	alert("Great Job! Your score is: "+score); 
+       }
+
+       else {
+       	alert("Better luck next time! Your score was: "+score);
+       }
+
+	};
+       });
+
+
+</script>
+
+
+
+</body>
+</html>

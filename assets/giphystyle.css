@@ -1,0 +1,83 @@
+h1 {
+	color: #3C8D0D;
+	size: xx-large;
+}
+
+#intro {
+	width: 1500px;
+	height: 75px;
+	text-align: center;
+	border-radius: 15px;
+	clear: both;
+	background: white;
+	border-color: #C21717;
+	border-style: solid;
+	border-width: 5px;
+}
+
+.theme {
+	width: 300px;
+	height: 40px;
+	background-color: #C21717;
+	border-width: 2px;
+	border-color: #3C8D0D; 
+	text-align: center;
+	border-style: solid;
+	border-radius: 15px;
+	color: white;
+	font-style: bold;
+	font-size: large;
+	padding: 5px 5px 5px 5px;
+}
+
+#themes-list {
+	text-align: center;
+	border-radius: 15px;
+	clear: both;
+	background-color: transparent;
+	border-color: #C21717;
+	border-style: solid;
+	border-width: 5px;
+	padding: 10px 10px 10px 10px;
+}
+
+#new-theme {
+	text-align: center;
+	border-radius: 15px;
+	clear: both;
+	background-color: white;
+	border-color: #C21717;
+	border-style: solid;
+	border-width: 5px;
+	padding: 10px 10px 10px 10px;
+	color: #3C8D0D;
+	style: bold;
+}
+
+#add-theme {
+	width: 100px;
+	height: 40px;
+	background-color: #C21717;
+	border-width: 2px;
+	border-color: #3C8D0D; 
+	text-align: center;
+	border-style: solid;
+	border-radius: 15px;
+	color: white;
+	padding: 5px 5px 5px 5px;
+}
+
+
+
+p {
+	width: 100px;
+	height: 20px;
+	background-color: #C21717;
+	border-width: 2px;
+	border-color: #3C8D0D; 
+	text-align: center;
+	border-style: solid;
+	border-radius: 15px;
+	color: white;
+	padding: 5px 5px 5px 5px;
+}

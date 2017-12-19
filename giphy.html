@@ -1,126 +1,79 @@
 <!DOCTYPE html>
-
 <html lang="en-us">
-
   <head>
-
     <meta charset="UTF-8">
     <title>Holiday GIF</title>
-
     <link rel="stylesheet" href="./assets/giphystyle.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-
-
   </head>
-
 <body background="./assets/images/christmas.png">
-
 <div id="intro"><h1>Holiday GIF generator</h1></div>
-
 <div id="themes-list"></div>
-
     <form id="new-theme">
       <label for="theme-input">Add your own theme</label>
       <input type="text" id="theme-input"><br>
-
       <!-- Button triggers new movie to be added -->
       <input id="add-theme" type="submit" value="Add theme">
     </form>
 <div id="gifs"></div>
-
-
 <script type="text/javascript">
-
-	$(document).ready(function() {
-
-
-
-	var themes = ["Christmas tree" , "menorah", "Elf" , "Chanukah" , "snowflake" , "snowman" , "A Christmas Story" , "jingle bells" ,"dreidel", "fireplace" , "Christmas cookies" , "Grinch" , "Santa" , "Rudolph","candy cane", "hot cocoa"];
-
-	console.log(themes);
-
-	$("#add-theme").on("click", function(event){
-		event.preventDefault();
-
-		var newtheme = $("#theme-input").val().trim();
-
-		themes.push(newtheme);
-		console.log(themes);
-		$("#themes-list").empty();
-		CreateButtons();
-
-	});
-
-	function CreateButtons() {
-
-		for (var i = 0; i < themes.length; i++) {
-
-			var generate = $("<button>");
-			generate.addClass("theme");
-			generate.attr("data-theme",themes[i]);
-			generate.text(themes[i]);
-
-			$("#themes-list").append(generate);
-		}
-	}
-
+    $(document).ready(function() {
+    var themes = ["Christmas tree" , "menorah", "Elf" , "Chanukah" , "snowflake" , "snowman" , "A Christmas Story" , "jingle bells" ,"dreidel", "fireplace" , "Christmas cookies" , "Grinch" , "Santa" , "Rudolph","candy cane", "hot cocoa"];
+    console.log(themes);
+    $("#add-theme").on("click", function(event){
+        event.preventDefault();
+        var newtheme = $("#theme-input").val().trim();
+        themes.push(newtheme);
+        console.log(themes);
+        $("#themes-list").empty();
+        CreateButtons();
+    });
+    function CreateButtons() {
+        for (var i = 0; i < themes.length; i++) {
+            var generate = $("<button>");
+            generate.addClass("theme");
+            generate.attr("data-theme",themes[i]);
+            generate.text(themes[i]);
+            $("#themes-list").append(generate);
+        }
+    }
 CreateButtons();
-
-	$("button").on("click",function() {
-		//$("#gifs").empty();
-		var chosenTheme = $(this).attr("data-theme");
-
-		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + chosenTheme + "&api_key=jhyQJv9Mc5VPG808UfdpMKY5VkJTAwAv";
-
-		$.ajax({
-			url: queryURL,
-			method: "GET"
-		})
-
-		.done(function(response) {
-			console.log(queryURL);
-
-			console.log(response);
-
-			var results = response.data;
-
-			for (var i = 0; i < 10; i++) {
-
-				var themeDiv = $("<div>");
-
-				var GIFrating = $("<p>").text("Rating: " + results[i].rating);
-
-				var GIFimage = $("<img>");
-
-				GIFimage.attr("src", results[i].images.fixed_height_still.url).attr("data-still",results[i].images.fixed_height_still.url).attr("data-animate",results[i].images.fixed_height.url).attr("data-state", "still").attr("class","giphy");
-
-
-				themeDiv.append(GIFrating);
-				themeDiv.append(GIFimage);
-
-				$("#gifs").prepend(themeDiv);
-			}
-		})
-
-	});
-	$("#giphy").on("click", function() {
-		var state = $(this).attr("data-state");
-
-		if (state === "still") {
-			$(this).attr("src",$(this).attr("data-animate"));
-			$(this).attr("data-state","animate");
-		}
-		else{
-			$(this).attr("src",$(this).attr("data-still"));
-			$(this).attr("data-state","still");
-		}
-	});
-		
-	});
-
-
-
+    $(document).on('click', "button.theme", function() {
+    // $("button").on("click",function() {
+        //$("#gifs").empty();
+        var chosenTheme = $(this).attr("data-theme");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + chosenTheme + "&api_key=jhyQJv9Mc5VPG808UfdpMKY5VkJTAwAv";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        .done(function(response) {
+            console.log(queryURL);
+            console.log(response);
+            var results = response.data;
+            for (var i = 0; i < 10; i++) {
+                var themeDiv = $("<div>");
+                var GIFrating = $("<p>").text("Rating: " + results[i].rating);
+                var GIFimage = $("<img>");
+                GIFimage.attr("src", results[i].images.fixed_height_still.url).attr("data-still",results[i].images.fixed_height_still.url).attr("data-animate",results[i].images.fixed_height.url).attr("data-state", "still").attr("class","giphy");
+                themeDiv.append(GIFrating);
+                themeDiv.append(GIFimage);
+                $("#gifs").prepend(themeDiv);
+            }
+        })
+    });
+    $("#giphy").on("click", function() {
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+            $(this).attr("src",$(this).attr("data-animate"));
+            $(this).attr("data-state","animate");
+        }
+        else{
+            $(this).attr("src",$(this).attr("data-still"));
+            $(this).attr("data-state","still");
+        }
+    });
+        
+    });
 </script>
 </body>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+    <link rel="stylesheet" href="./assets/trainstyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body background="./assets/images/circles-dark.png">
+
+<div id="clock">Current Time:</div>
+<button id="next-train">Next Train</button>
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- ================================================================================== -->
+
+  <!-- Firebase JavaScript Link -->
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCGE0IhSkgwBeQBdvj2Pf03fmYOSRlrw0E",
+    authDomain: "project-8095927150192695810.firebaseapp.com",
+    databaseURL: "https://project-8095927150192695810.firebaseio.com",
+    projectId: "project-8095927150192695810",
+    storageBucket: "project-8095927150192695810.appspot.com",
+    messagingSenderId: "569275461103"
+  };
+  firebase.initializeApp(config);
+
+
+
+    // Variables
+    // ================================================================================
+
+    // Get a reference to the database service
+    var database = firebase.database();
+    var FirstTrain = new Date();
+    FirstTrain.setHours(8); 
+    FirstTrain.setMinutes(0); 
+    FirstTrain.setSeconds(0); 
+    console.log(FirstTrain);
+    var Dallasfreq = 30;
+    var Omahafeq = 120;
+    var SanDiegofreq = 60;
+    var SLCfreq = 15;
+
+
+    var now = new Date(Date.now());
+    console.log(now);
+    var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    console.log(time);
+
+
+    $(document).ready(function() {
+        database.ref().set({
+        now,
+        Dallasfreq,
+        Omahafeq,
+        time
+
+    });
+
+  });
+
+
+    //Display the current time on the page
+  var currenttime = setInterval(clock, 1000);
+
+  function clock() {
+      var nowdiv = new Date();
+      document.getElementById("clock").innerHTML = "Current Time: " + nowdiv.toLocaleTimeString();
+
+  }
+
+     // function NextDallasTrain() {
+
+
+    // On Click
+    $("#next-train").on("click", function () {
+
+
+    console.log(Dallas);
+    console.log(Omaha);
+    });
+
+
+</script>
+
+</body>
+
+</html>

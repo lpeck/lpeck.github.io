@@ -55,7 +55,7 @@ CreateButtons();
                 var themeDiv = $("<div>");
                 var GIFrating = $("<p>").text("Rating: " + results[i].rating);
                 var GIFimage = $("<img>");
-                GIFimage.attr("src", results[i].images.fixed_height_still.url).attr("data-still",results[i].images.fixed_height_still.url).attr("data-animate",results[i].images.fixed_height.url).attr("data-state", "still").attr("class","giphy");
+                GIFimage.attr("src", results[i].images.fixed_height.url).attr("data-still",results[i].images.fixed_height.url).attr("data-animate",results[i].images.fixed_height.url).attr("data-state", "still").attr("class","giphy");
                 themeDiv.append(GIFrating);
                 themeDiv.append(GIFimage);
                 $("#gifs").prepend(themeDiv);
